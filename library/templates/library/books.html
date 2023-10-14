@@ -1,0 +1,25 @@
+{% extends 'library/includes/base.html' %}
+{% load static %}
+
+
+{% block title %}
+Books
+{% endblock title%}
+{% block style %}
+    <link rel="stylesheet" href="{% static 'library/books.css' %}">
+    <link rel="stylesheet" href="{% static 'library/includes/book.css' %}">
+{% endblock style %}
+
+
+{% block body %}
+
+<section id = "all-books">
+    <h2>All books</h2>
+    <ul>
+        {% for b in books %}
+            {% include "library/includes/book.html" %}
+        {% endfor %}   
+    </ul>
+</section>
+
+{% endblock body %}

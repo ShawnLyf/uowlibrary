@@ -1,0 +1,45 @@
+{% extends 'library/includes/base.html' %}
+{% load static %}
+
+{% block title %}Deatils{% endblock title%}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'library/details.css' %}">
+{% endblock style %}
+
+
+{% block body %}
+
+<section id="summary">
+    <h2>{{book.title}}    
+    </h2>
+    <h3>by {{book.author}}    
+    </h3>
+    <div>
+        <h1>
+            {% autoescape off %}
+                {{book.rating}}
+            {% endautoescape %}
+        </h1>
+    </div>
+  
+    <article>
+        <img src="{{book.image_urls}}" alt="post tiitle">
+    </article>
+</section>
+
+<main>
+    <h3>Publish Date:</h3> <h4> {{book.publishdate}}</h4>
+    <h3>Pages Format </h3><h4>{{book.pagesformat}}</h4>
+    <h3>
+        Book Preview: 
+    </h3>
+    <h4>
+        {% autoescape off %}
+            {{book.description}}
+        {% endautoescape %} 
+    </h4>
+    
+    
+</main>
+{% endblock body %}

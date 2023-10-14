@@ -1,0 +1,42 @@
+{% extends 'library/includes/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title%}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static 'library/index.css' %}">
+    <link rel="stylesheet" href="{% static 'library/includes/book.css' %}">
+{% endblock style %}
+
+
+{% block body %}
+
+<section id="welcome">
+    <header>
+        <img src="{% static 'library/images/logo.jpg' %}" alt="uowLibrary Logo">
+        <h2>&nbsp;Best&nbsp;Book&nbsp;Ever</h2>
+    </header>
+    <p>Check out our latest book recommondations!</p>
+</section>
+
+<section id = "latest-books">
+    <h2>Daily Recommondations</h2>
+    <ul>
+        {% for b in books %}
+            {% include "library/includes/book.html" %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id = "about">
+    <h2>
+        About us
+    </h2>
+    <p>
+        This is a book recommondation site
+     </p>
+     <p>
+        We are here to recommondate the best books to you!
+     </p>
+</section>
+{% endblock body %}

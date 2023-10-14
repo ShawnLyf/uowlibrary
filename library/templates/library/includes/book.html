@@ -1,0 +1,17 @@
+
+<li class="griditem">
+    <article class="book">
+        <a href="{% url 'deatils_page' b.id %}">
+            <img src="{{b.image_urls}}" alt="missing book picture">
+           
+            <div class="book-content">
+                <h3>
+                    {{b.title}}
+                </h3>
+                <p>
+                    {{b.brief}}
+                </p>
+            </div>
+        </a>
+    </article>
+</li>
